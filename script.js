@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BFP4F Simple spam filter
 // @namespace    https://battlefieldtools.com
-// @version      0.1
+// @version      0.11
 // @description  A simple SPAM filter for the BFP4F forums, hover to view the original title
 // @author       Danny Li - SharpBunny
 // @include      http://battlefield.play4free.com/en/forum/*
@@ -49,7 +49,7 @@ for(var i = 0; i < threadTitles.length; i++){
 	if(isSpam) {
 		titleEl.setAttribute('class', 'subject_old')
 		titleEl.setAttribute('title', titleEl.innerHTML.escapeHTML())
-		titleEl.innerHTML = '[MARKED AS SPAM]';
+		titleEl.innerHTML = '[SPAM]';
 	}
 	
 }
