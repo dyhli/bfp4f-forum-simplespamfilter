@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name			BFP4F Simple spam filter
 // @namespace		https://battlefieldtools.com
-// @version			0.16
+// @version			0.17
 // @updateURL		https://raw.githubusercontent.com/dyhli/bfp4f-forum-simplespamfilter/master/script.js
 // @description		A simple SPAM filter for the BFP4F forums, hover to view the original title
 // @author			Danny Li - SharpBunny
@@ -50,8 +50,8 @@ function checkSpam(str) {
 	for(var iv = 0, len = spamSettings.spamTitles.length; iv < len; ++iv) {
 		if(str.indexOf(spamSettings.spamTitles[iv]) != -1) return true;
 	}
-	str = str.replace(/[\x20-\x7FäöüßÄÖÜẞ]/g, '');
-	if(str.length > 0) return true;
+	str = str.replace(/[\x20-\x7FäöüßÄÖÜẞ’]/g, '');
+    if(str.length > 0) {console.log(str);return true;}
 	return false;
 }
 
