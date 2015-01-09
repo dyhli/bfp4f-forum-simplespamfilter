@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name			BFP4F Simple spam filter
 // @namespace		https://battlefieldtools.com
-// @version			0.12
+// @version			0.14
 // @updateURL		https://raw.githubusercontent.com/dyhli/bfp4f-forum-simplespamfilter/master/script.js
 // @description		A simple SPAM filter for the BFP4F forums, hover to view the original title
 // @author			Danny Li - SharpBunny
