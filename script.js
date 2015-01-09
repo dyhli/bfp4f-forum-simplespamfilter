@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name			BFP4F Simple spam filter
 // @namespace		https://battlefieldtools.com
-// @version			0.15
+// @version			0.16
 // @updateURL		https://raw.githubusercontent.com/dyhli/bfp4f-forum-simplespamfilter/master/script.js
 // @description		A simple SPAM filter for the BFP4F forums, hover to view the original title
 // @author			Danny Li - SharpBunny
 // @include			http://battlefield.play4free.com/en/forum/*
 // @include			http://battlefield.play4free.com/de/forum/*
 // @include			http://battlefield.play4free.com/pl/forum/*
+// @include			http://battlefield.play4free.com/en/forum/*
 // @include			http://battlefield.play4free.com/fr/forum/*
 // @include			http://battlefield.play4free.com/ru/forum/*
 // @grant			none
@@ -45,14 +46,12 @@ String.prototype.escapeHTML = function() {
 }
 
 function checkSpam(str) {
-	if(str.match(/([0-9]{6,15})/g)) {
-		return true;
-	}
+	if(str.match(/([0-9]{6,15})/g)) return true;
 	for(var iv = 0, len = spamSettings.spamTitles.length; iv < len; ++iv) {
-		if(str.indexOf(spamSettings.spamTitles[iv]) != -1) {
-			return true;
-		}
+		if(str.indexOf(spamSettings.spamTitles[iv]) != -1) return true;
 	}
+	str = str.replace(/[\x20-\x7FäöüßÄÖÜẞ]/g, '');
+	if(str.length > 0) return true;
 	return false;
 }
 
